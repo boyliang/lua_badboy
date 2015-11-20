@@ -1,3 +1,4 @@
 # lua_badboy
 
-Something useful tools for lua
+something useful tools for lua
+main.lua show to use.
