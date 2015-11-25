@@ -198,6 +198,26 @@ function RootView:create(options)
   return createView(-1, options, RootView)
 end
 
+function RootView:removeView(view)
+  if view then
+    for i = 1, #self.views do
+      if self.views[i] == view then
+        table.remove(self.views, i)
+      end
+    end
+  end
+end
+
+function RootView:removeViewByID(id)
+  if view then
+    for i = 1, #self.views do
+      if self.views[i].id == id then
+        table.remove(self.views, i)
+      end
+    end
+  end
+end
+
 function RootView:addView(view)
   is_page_style = function () 
     for i, v in pairs(self.views) do
@@ -211,6 +231,11 @@ function RootView:addView(view)
   if is_page_style() and view.type ~= Page.type then
     error('Only Page can be added')
   else
+    for i, v in pairs(self.views) do
+      if v.id == view.id then
+         error(string.format('id %d is repeat', view.id))
+      end
+    end
     self.views[#self.views + 1] = view
   end
 end
