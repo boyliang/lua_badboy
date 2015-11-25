@@ -842,7 +842,10 @@ function encode_value(self, value, parents, etc, options, indent)
 
    elseif type(value) == 'boolean' then
       return tostring(value)
-
+    
+   elseif type(value) == 'function' then
+      return 'null'
+  
    elseif type(value) ~= 'table' then
       self:onEncodeError("can't convert " .. type(value) .. " to JSON", etc)
 

@@ -29,4 +29,7 @@ function string:trim() return lo_strutils.trim(self) end
 badboy.strutils = lo_strutils
 -- StringUtils模块
 
+-- UI动态构建模块
+
+-- UI动态构建模块
 return badboy
