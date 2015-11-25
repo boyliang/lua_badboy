@@ -1,6 +1,6 @@
-#Badboy是专为叉叉脚本引擎开发的工具类，代码全部以开源的方式提供，目前一共提供了两个工具模块: JSON和StringUtils。
+#Badboy是专为叉叉脚本引擎开发的工具类，代码全部以开源的方式提供。
 
-##API都比较丰富， 在此大概列一下：
+##模块清单：
 
 ##JSON
 	newArray		新建数组对象
@@ -17,7 +17,21 @@
 	contains		是否包含子串
 	startWith		是否以某个子串开头
 	endsWith		是否以某个子中结束
-	...(等等，自己看情况使用吧)
+	...(等等，自己看去探索)
+
+##UI
+	RootView:create			构造UI根对象
+	RootView:addView		添加子view
+	RootView:removeView		删除子view
+	RootView:removeViewByID	删除子view
+	Page:create				构建Page控件
+	Page:addView			添加子view
+	Page:removeView         删除子view
+	Page:removeViewByID     删除子view
+	Image:create			构造Image控件
+	Edit:create				构造Edit控件
+	Lable:create			构造Lable控件
+	...（所有属性都可以直接通过对象访问）
 
 ##用法
 	1. 进入https://github.com/boyliang/lua_badboy，下载项目源码；
