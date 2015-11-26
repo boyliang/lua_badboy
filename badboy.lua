@@ -30,6 +30,11 @@ badboy.strutils = lo_strutils
 -- StringUtils模块
 
 -- UI动态构建模块
-
+badboy.ui = require('bblibs.UI')
 -- UI动态构建模块
+
+-- Utils模块
+badboy.utils = require('bblibs.utils')
+-- Utils模块
+
 return badboy
