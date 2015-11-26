@@ -8,7 +8,7 @@ end
 
 -- 任意输出
 function sysLogLst(...)
-  msg = ''
+  local msg = ''
   for k,v in pairs({...}) do
     msg = msg + tostring(v) + ' '
   end
@@ -60,7 +60,7 @@ function cmpColor(array, s, isKeepScreen)
   s = math.floor(0xff * (100 - s) * 0.01)
   isKeepScreen = isKeepScreen or false
   
-  lockscreen = function(flag)
+  local lockscreen = function(flag)
     if isKeepScreen == true then
       keepScreen(flag)
     end
