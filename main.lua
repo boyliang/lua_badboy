@@ -63,5 +63,3 @@ page:removeView(label1)   --从page中删除label
 
 uijson = json.encode(rootview)
 showUI(uijson)
-
-return modules
