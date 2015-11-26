@@ -33,6 +33,13 @@
 	Lable:create			构造Lable控件
 	...（所有属性都可以直接通过对象访问）
 
+#utils
+	sysLogFmt				格式化字符串输出
+	sysLogLst				任意内容输出
+	tap						模拟一次点击
+	swip					模拟一次滑动
+	cmpColor				指定颜色对比
+
 ##用法
 	1. 进入https://github.com/boyliang/lua_badboy，下载项目源码；
 	2. 把项目当中内容，复制到src目录下；

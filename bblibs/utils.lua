@@ -55,7 +55,7 @@ function swip(x1,y1,x2,y2)
 end
 
 -- 多点颜色对比，格式为{{x,y,color},{x,y,color}...} 
-function cmpColorEx(array, s, isKeepScreen)
+function cmpColor(array, s, isKeepScreen)
   s = s or 90
   s = math.floor(0xff * (100 - s) * 0.01)
   isKeepScreen = isKeepScreen or false
