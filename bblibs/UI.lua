@@ -1,6 +1,3 @@
--- 作者boyliang
--- 时间: 2015-11-25
-
 
 -- Style风格
 ViewStyle = {
@@ -18,6 +15,14 @@ TextAlign = {
 -- 创建View对象
 local function createView(id, options, mematable)
   options = options or {}
+  
+  for k, v in pairs(mematable) do
+    if k ~= '__index' and type(v) ~= 'function' and options[k] == nil then
+      print(k)
+      options[k] = v
+    end
+  end
+  
   setmetatable(options, mematable)
   mematable.__index = mematable
 
@@ -148,11 +153,15 @@ end
 
 -- 添加子View
 function Page:addView(view)
+  if view == nil then
+    error('view is nil')
+  end
+
   if view and view.type ~= self.type then
     for i, v in pairs(self.views) do
-    	if v.id == view.id then
-    	   error(string.format('id %d is repeat', view.id))
-    	end
+      if v.id == view.id then
+         error(string.format('id %d is repeat', view.id))
+      end
     end
     self.views[#self.views + 1] = view
   else
@@ -198,27 +207,11 @@ function RootView:create(options)
   return createView(-1, options, RootView)
 end
 
-function RootView:removeView(view)
-  if view then
-    for i = 1, #self.views do
-      if self.views[i] == view then
-        table.remove(self.views, i)
-      end
-    end
-  end
-end
-
-function RootView:removeViewByID(id)
-  if view then
-    for i = 1, #self.views do
-      if self.views[i].id == id then
-        table.remove(self.views, i)
-      end
-    end
-  end
-end
-
 function RootView:addView(view)
+  if view == nil then
+    error('view is nil')
+  end
+
   is_page_style = function () 
     for i, v in pairs(self.views) do
       if v.type == Page.type then
@@ -231,11 +224,6 @@ function RootView:addView(view)
   if is_page_style() and view.type ~= Page.type then
     error('Only Page can be added')
   else
-    for i, v in pairs(self.views) do
-      if v.id == view.id then
-         error(string.format('id %d is repeat', view.id))
-      end
-    end
     self.views[#self.views + 1] = view
   end
 end
