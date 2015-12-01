@@ -79,7 +79,11 @@ function RadioGroup:setList(...)
   local args = {...}
   
   for i, v in pairs(args) do
-    list_value = list_value  .. v .. ','
+    if i == #args then
+       list_value = list_value .. v
+    else
+       list_value = list_value  .. v .. ','
+    end
   end
   
   self.list = list_value
@@ -130,7 +134,11 @@ function CheckBoxGroup:setSelects(...)
   local args = {...}
   
   for i, v in pairs(args) do
-    select_value = select_value .. v .. '@'
+    if i == #args then
+      select_value = select_value .. v
+    else
+      select_value = select_value .. v .. '@'
+    end
   end
   
   self.select = select_value
