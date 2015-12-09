@@ -28,6 +28,7 @@ sysLog('hex:' .. hex)
 sysLog('sha1:' .. sha1)
 sysLog('md5:' .. md5)
 
+-- UI
 local rootview = RootView:create({style = ViewStyle.CUSTOME})
 local page = Page:create("page")
 page.text = "Page1"
@@ -63,3 +64,12 @@ page:removeView(label1)   --从page中删除label
 
 uijson = json.encode(rootview)
 showUI(uijson)
+
+-- POS
+p1 = bpos:new(0, 0, 0x123456)
+p2 = bpos:new(1, 2)
+sysLog(p1:distanceBetween(p2))
+sysLog(p1:angleBetween(p2))
+p2 = p1:polarProjection(4, 30)
+sysLog(string.format('p2[%d, %d]', p2.x, p2.y))
+

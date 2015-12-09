@@ -33,6 +33,14 @@
 	Lable:create			构造Lable控件
 	...（所有属性都可以直接通过对象访问）
 
+##POS
+	distanceBetween			计算距离		
+	click                   单击
+	touchMoveTo  			精确滑动
+	angleBetween			计算角度
+	polarProjection         根据角度和距离找点  
+	isColorClick			根据颜色进行点击
+
 #utils
 	sysLogFmt				格式化字符串输出
 	sysLogLst				任意内容输出

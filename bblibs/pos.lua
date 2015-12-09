@@ -14,9 +14,9 @@ function pos:new(x, y, color)
 	options.x = x or 0
 	options.y = y or 0
 	options.color = color or 0x000000
-    setmetatable(options, self)
+  setmetatable(options, self)
 	self.__index = self
-    return options
+  return options
 end
 
 --距离
@@ -33,9 +33,9 @@ function pos:click(sleep, slepp1)
   touchDown(index, x, y)
   
   if sleep ~= nil then
-	mSleep(sleep)
+	 mSleep(sleep)
   else
-	mSleep(math.random(60,80))                --某些特殊情况需要增大延迟才能模拟点击效果
+	 mSleep(math.random(60,80))                --某些特殊情况需要增大延迟才能模拟点击效果
   end
   
   touchUp(index, x, y)
@@ -91,15 +91,15 @@ end
 
 --单点颜色点击
 function pos:isColorClick(s)
-    local fl,abs = math.floor,math.abs
+  local fl,abs = math.floor,math.abs
 	local c = self.color
 	s = s or 90
-    s = fl(0xff*(100-s)*0.01)
-    local r,g,b = fl(c/0x10000),fl(c%0x10000/0x100),fl(c%0x100)
-    local rr,gg,bb = getColorRGB(self.x,self.y)
-    if abs(r-rr)<s and abs(g-gg)<s and abs(b-bb)<s then
-        self:click()
-    end
+  s = fl(0xff*(100-s)*0.01)
+  local r,g,b = fl(c/0x10000),fl(c%0x10000/0x100),fl(c%0x100)
+  local rr,gg,bb = getColorRGB(self.x,self.y)
+  if abs(r-rr)<s and abs(g-gg)<s and abs(b-bb)<s then
+      self:click()
+  end
 end
 
 return pos
