@@ -37,4 +37,8 @@ badboy.ui = require('bblibs.UI')
 badboy.utils = require('bblibs.utils')
 -- Utils模块
 
+-- POS模块
+badboy.pos = require('bblibs.pos')
+-- POS模块
+
 return badboy
