@@ -10,7 +10,7 @@ end
 function sysLogLst(...)
   local msg = ''
   for k,v in pairs({...}) do
-    msg = msg + tostring(v) + ' '
+    msg = string.format('%s %s ', msg, tostring(v))
   end
   sysLog(msg)
 end

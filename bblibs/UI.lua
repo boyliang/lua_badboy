@@ -18,7 +18,6 @@ local function createView(id, options, mematable)
   
   for k, v in pairs(mematable) do
     if k ~= '__index' and type(v) ~= 'function' and options[k] == nil then
-      print(k)
       options[k] = v
     end
   end
@@ -123,9 +122,13 @@ function CheckBoxGroup:setList(...)
   local args = {...}
   
   for k, v in pairs(args) do
-    list_value = list_value .. v .. ','
+    if k == #args then
+      list_value = list_value .. v
+    else
+      list_value = list_value .. v .. ','
+    end
   end
-  
+ 
   self.list = list_value
 end
 
