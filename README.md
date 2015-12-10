@@ -49,7 +49,7 @@
 	cmpColor				指定颜色对比
 	
 ##luasocket
-	详细使用说明，见http://w3.impa.br/~diego/software/luasocket/reference.html
+	详细使用说明，main.lua中，API参考见http://w3.impa.br/~diego/software/luasocket/reference.html
 
 ##用法
 	1. 进入https://github.com/boyliang/lua_badboy，下载项目源码；
