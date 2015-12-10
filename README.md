@@ -41,12 +41,15 @@
 	polarProjection         根据角度和距离找点  
 	isColorClick			根据颜色进行点击
 
-#utils
+##utils
 	sysLogFmt				格式化字符串输出
 	sysLogLst				任意内容输出
 	tap						模拟一次点击
 	swip					模拟一次滑动
 	cmpColor				指定颜色对比
+	
+##luasocket
+	详细使用说明，见http://w3.impa.br/~diego/software/luasocket/reference.html
 
 ##用法
 	1. 进入https://github.com/boyliang/lua_badboy，下载项目源码；
