@@ -48,10 +48,10 @@ end
 
 --滑动
 function pos:touchMoveTo(t, step, sleep1, sleep2)
-	local step = step or 20
-	local sleep1 = sleep1 or 500
-	local sleep2 = sleep2 or 20
-    local x, y, x2, y2, index = self.x, self,y, t.x , t.x, math.random(1,5)
+  local step = step or 20
+  local sleep1 = sleep1 or 500
+  local sleep2 = sleep2 or 20
+    local x, y, x2, y2, index = self.x, self.y, t.x , t.y, math.random(1,5)
     touchDown(index, x, y)
 
     local function move(from, to) 
@@ -63,10 +63,15 @@ function pos:touchMoveTo(t, step, sleep1, sleep2)
         return step 
       end 
     end
+  
 
     while (math.abs(x-x2) >= step) or (math.abs(y-y2) >= step) do
-        if math.abs(x-x2) >= step then x = x + move(x,x2) end
-        if math.abs(y-y2) >= step then y = y + move(y,y2) end
+        if math.abs(x-x2) >= step then 
+      x = x + move(x,x2)
+    end
+        if math.abs(y-y2) >= step then 
+      y = y + move(y,y2) 
+    end
         touchMove(index, x, y)
         mSleep(sleep2)
     end
