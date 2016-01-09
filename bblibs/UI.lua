@@ -48,16 +48,16 @@ function Image:setSrc( src )
 end
 
 -- Lable
-Lable = {
+Label = {
   id = "LableID",
-  type = "Lable",
-  text = "LableText",
+  type = "Label",
+  text = "LabelText",
   size = 15,
   align = TextAlign.CENTER,
   color = "0, 0, 255"
 }
 -- 创建Lable
-function Lable:create(id, options)
+function Label:create(id, options)
   return createView(id, options, Lable)
 end
 
