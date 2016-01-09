@@ -37,7 +37,7 @@ local page = Page:create("page")
 page.text = "Page1"
 local page2 = Page:create("page2")
 page2.text = "Page2"
-local label = Lable:create("lable", {color = "255, 255, 0"})
+local label = Label:create("label", {color = "255, 255, 0"})
 label.text = "I love XX"
 local image = Image:create("image")
 image.src = "bg.png"
