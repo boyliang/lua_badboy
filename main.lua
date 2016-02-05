@@ -60,7 +60,7 @@ page:addView(label)       --把label添加到page
 page:addView(image)       --把image添加到page
 page:addView(checkboxgroup)
 page:addView(radiogroup)
-page:removeView(label1)   --从page中删除label
+page:removeView(label)   --从page中删除label
 
 uijson = json.encode(rootview)
 showUI(uijson)
