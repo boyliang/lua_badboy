@@ -49,7 +49,7 @@ end
 
 -- Lable
 Label = {
-  id = "LableID",
+  id = "LabelID",
   type = "Label",
   text = "LabelText",
   size = 15,
@@ -58,7 +58,7 @@ Label = {
 }
 -- 创建Lable
 function Label:create(id, options)
-  return createView(id, options, Lable)
+  return createView(id, options, Label)
 end
 
 -- RadioGroup
